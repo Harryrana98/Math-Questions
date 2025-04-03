@@ -48,7 +48,7 @@ function startQuiz() {
 
   timerDiv.innerHTML = timer;
   const counter = setInterval(() => {
-   timerDiv.innerHTML=timer--
+   timerDiv.innerHTML=--timer
    if(timer===0){
     clearInterval(counter)
    }
