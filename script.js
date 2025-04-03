@@ -32,7 +32,8 @@ const quesDiv = document.querySelector("#ques");
 const optDiv = document.querySelector("#opt");
 const timerDiv = document.querySelector("#timer");
 
-const timer=0
+let timer = 5;
+const quesLength=0
 
 startBtn.addEventListener("click", startQuiz);
 
@@ -45,13 +46,16 @@ function startQuiz() {
 
   OptionDisplay(randomOptions);
 
-  timerDiv.innerHTML=timer
+  timerDiv.innerHTML = timer;
   const counter = setInterval(() => {
-    if()
-  
-      timerDiv.innerHTML++;
+   timerDiv.innerHTML=timer--
+   if(timer===0){
+    clearInterval(counter)
+   }
   }, 1000);
 }
+
+function UpdateQuestions() {}
 
 function OptionDisplay(optArr) {
   optArr.forEach((option) => {
@@ -59,7 +63,6 @@ function OptionDisplay(optArr) {
     optBtn.className = "optBtn";
     optBtn.innerHTML = option;
     optDiv.append(optBtn);
-
   });
 }
 
